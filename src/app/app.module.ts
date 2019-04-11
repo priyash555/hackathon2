@@ -7,6 +7,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FormsModule } from '@angular/forms';
+import { ButtonsModule, WavesModule, CardsFreeModule } from 'angular-bootstrap-md'
 
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
@@ -36,7 +39,12 @@ import { HomeService } from './home/home.service';
     AuthModule,
     AdminModule,
     AppRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    MDBBootstrapModule.forRoot(),
+    FormsModule,
+    ButtonsModule,
+    WavesModule,
+    CardsFreeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
