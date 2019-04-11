@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
+import { HomeService } from './home/home.service';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { NewsComponent } from './news/news.component';
     provide: HTTP_INTERCEPTORS,
     useClass: CatchErrorInterceptor,
     multi: true,
-  }],
+  },HomeService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
