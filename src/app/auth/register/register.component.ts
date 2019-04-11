@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
-
-
 import {AuthService} from '../auth.service';
 
 @Component({
@@ -28,13 +26,15 @@ export class RegisterComponent implements OnInit {
     fullname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
-    repeatPassword: new FormControl('', [Validators.required, this.passwordsMatchValidator])
+    repeatPassword: new FormControl('', [Validators.required, this.passwordsMatchValidator]),
+    gender: new FormControl('', [Validators.required])
   })
 
   get fullname(): any { return this.userForm.get('fullname'); }
   get email(): any { return this.userForm.get('email'); }
   get password(): any { return this.userForm.get('password'); }
   get repeatPassword(): any { return this.userForm.get('repeatPassword'); }
+  get gender(): any { return this.userForm.get('gender'); }
 
   register() {
 
@@ -44,11 +44,13 @@ export class RegisterComponent implements OnInit {
       fullname,
       email,
       password,
-      repeatPassword
+      repeatPassword,
+      gender
     } = this.userForm.getRawValue();
 
-    this.authService.register(fullname, email, password, repeatPassword)
+    this.authService.register(fullname, email, password, repeatPassword,gender)
     .subscribe(data => {
+      console.log(data);
       this.router.navigate(['']);
     })
   }
