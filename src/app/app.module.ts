@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NewsComponent } from './news/news.component';
     HeaderComponent,
     HomeComponent,
     NewsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
