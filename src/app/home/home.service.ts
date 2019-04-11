@@ -13,7 +13,7 @@ export class HomeService {
 
   getfeeds()  {
     
-     return this.http.get('https://healthfinder.gov/FreeContent/developer/Search.xml?api_key=lzdzpvovdsxvkowb&keyword=*')
+     return this.http.get('https://cors-anywhere.herokuapp.com/https://healthfinder.gov/FreeContent/developer/Search.json?api_key=lzdzpvovdsxvkowb&keyword=*')
       .subscribe((data : any) => {
             return data;
       },(error)=>{
