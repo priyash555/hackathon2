@@ -20,12 +20,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
-<<<<<<< HEAD
 import { HomeService } from './home/home.service';
-
-=======
 import { FooterComponent } from './footer/footer.component';
->>>>>>> origin/master
+
+
 
 @NgModule({
   declarations: [
