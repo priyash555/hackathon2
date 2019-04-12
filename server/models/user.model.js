@@ -20,6 +20,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  pregnancy: {
+    type: String,
+    required: true
+  },
+  age: {
+    type: Number,
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now

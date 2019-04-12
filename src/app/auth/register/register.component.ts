@@ -27,14 +27,18 @@ export class RegisterComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     repeatPassword: new FormControl('', [Validators.required, this.passwordsMatchValidator]),
-    gender: new FormControl('', [Validators.required])
+    gender: new FormControl('', [Validators.required]),
+    pregnancy: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required])
   })
 
   get fullname(): any { return this.userForm.get('fullname'); }
   get email(): any { return this.userForm.get('email'); }
   get password(): any { return this.userForm.get('password'); }
   get repeatPassword(): any { return this.userForm.get('repeatPassword'); }
-  get gender(): any { return this.userForm.get('gender'); }
+  get gender(): any { return this.userForm.get('gender') };
+  get pregnancy(): any { return this.userForm.get('pregnancy') };
+  get age(): any { return this.userForm.get('age'); }
 
   register() {
 
@@ -45,10 +49,12 @@ export class RegisterComponent implements OnInit {
       email,
       password,
       repeatPassword,
-      gender
+      gender,
+      pregnancy,
+      age
     } = this.userForm.getRawValue();
 
-    this.authService.register(fullname, email, password, repeatPassword,gender)
+    this.authService.register(fullname, email, password, repeatPassword, gender, pregnancy, age)
     .subscribe(data => {
       console.log(data);
       this.router.navigate(['']);
